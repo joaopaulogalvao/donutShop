@@ -1,0 +1,161 @@
+.wrapper {
+  width: 720px;
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.header {
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer {
+  text-align: center;
+  font-family: helvetica;
+  font-size: 10px;
+  font-weight: bold;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1 {
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+img {
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+nav {
+  width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+ul {
+  width: 570px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  border-top: 2px solid #000;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgb(0, 0, 0);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(0, 0, 0);
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+li {
+  display: inline;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: helvetica;
+  margin-right: 60px;
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+#one, #two, #three, #four, #five, #six {
+  display: block;
+}
+
+article {
+
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.section2 {
+  margin-right: auto;
+  margin-left: auto
+}
+
+figure {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#left_photos {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#center_photos {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#right_photos {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+
+#caption {
+
+  font-weight: bold;
+  font-family: helvetica;
+  font-size: 14px;
+}
+
+#donut_results th,td {
+            background-color: white;
+            font-size: 15px;
+}
+
+#table-transform th,td {
+
+            font-size: 15px;
+}
+
+#summaryOfResults th,td {
+
+            font-size: 15px;
+}
+
+#subHeader {
+  font-family: helvetica;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#buttonShake {
+  margin-right: auto;
+  margin-left: 485px;
+}
+
+body {
+  font-size: 80%;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.15em;
+  background-color: white;
+  background-image: url("http://upload.wikimedia.org/wikipedia/commons/a/a5/Glazed-Donut.jpg");
+  background-size: 97%;
+      }
+

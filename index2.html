@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+    <title>Seattle Donut Shop</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/donutStyle.css" />
+</head>
+
+<body>
+    <header class="wrapper">
+        <h1 class="header"><img src = "images/theSeattleDonutCo.png"></h1>
+        <nav>
+            <ul>
+                <li><a href="donutShop.html">Home</a></li>
+                <li>About us</li>
+                <li><a href="index2.html">Kitchen</a></li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="section2">
+        <article class="products">
+            <h2 id="subHeader">Number of donuts we bake - reload the page and check our live numbers:</h2>
+            <div id="donut_results">
+                <script src="scripts/donutScript.js"></script>
+                <script>
+                addTable();
+                </script>
+            </div>
+        </article>
+        <article>
+            <div id="page">
+                <ul>
+                    <h1 id="listHeader">Shops List</h1>
+                    <h2>Buy Donuts</h2>
+                    <li id="one" class="shops">Downtown</li>
+                    <li id="two" class="shops">Capitol Hill</li>
+                    <li id="three" class="shops">South Lake Union</li>
+                    <li id="four" class="shops">Wedgewood</li>
+                    <li id="five" class="shops">Ballard</li>
+                    <li id="six" class="shops">Fremont</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+    <script type="text/javascript" src="scripts/donutScript.js"></script>
+</body>
+<footer class="footer">
+    Copyright: The Seattle Donut Shop Co. 2015
+</footer>
+
+</html>
