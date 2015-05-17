@@ -118,29 +118,27 @@ $("#simpson_button").click(function() {
 });
 
 //List interactivity
-$(function() {
-  var ids = '';
-  var $listItems = $('.shops');
+var donutShopList = [downtown, capitolHill, southLakeUnion, wedgewood, ballard, fremont];
 
-  $listItems.on('mouseover click', function() {
-    ids = this.id;
-    $listItems.children('span').remove();
-    $('#one').append(' <span class="priority">' + downtown.getDonutsPerHour() + '</span>');
-    $('#two').append(' <span class="priority">' + capitolHill.getDonutsPerHour() + '</span>');
-    $('#three').append(' <span class="priority">' + southLakeUnion.getDonutsPerHour() + '</span>');
-  });
+ var $listItems = $('.shops');
 
-  $listItems.on('mouseout', function() {
-    $(this).children('span').remove();
-  });
+for (var i = 0; i < donutShopList.length; i++) {
+
+    var shopId = '#shop' + (i + 1);
+//i + 1 for accounting for array zero indexing
+    $(shopId).append('<span>' + donutShopList[i] + '</span>');
+
+}
+
+$listItems.on('mouseover click', function() {
+
+    $(this).children('span').show();
 
 });
 
-
-
-
-
-
+$listItems.on('mouseout', function() {
+    $(this).children('span').hide();
+});
 
 
 
