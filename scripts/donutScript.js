@@ -125,7 +125,7 @@ $(function() {
   $listItems.on('mouseover click', function() {
     ids = this.id;
     $listItems.children('span').remove();
-    $(this).append(' <span class="priority">' + downtown.getDonutsPerHour() + '</span>');
+    $(this).append(' <span class="priority">' + downtown.getDonutsPerHour('#one') + '</span>');
   });
 
   $listItems.on('mouseout', function() {
