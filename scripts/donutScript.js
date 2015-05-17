@@ -126,9 +126,12 @@ for (var i = 0; i < donutShopList.length; i++) {
 
     var shopId = '#shop' + (i + 1);
 //i + 1 for accounting for array zero indexing
-    $(shopId).append('<span>' + donutShopList[i] + '</span>');
+    $(shopId).append(' ave donuts a customer: ' +donutShopList[i].avgDonutsCustomer);
+    $(shopId).append('<span> Donuts Per Hour:'+ donutShopList[i].getDonutsPerHour() + '</span>');
 
 }
+
+$listItems.children('span').hide();
 
 $listItems.on('mouseover click', function() {
 
