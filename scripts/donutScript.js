@@ -93,52 +93,6 @@ master.addShop(fremont);
 console.log(master.shopList);
 master.generateReport();
 
-// Table creation
-function addTable() {
-    var myTableDiv = document.getElementById("donut_results");
-    var table = document.createElement('TABLE');
-    var tableBody = document.createElement('TBODY');
-
-    table.border = '1';
-    table.appendChild(tableBody);
-
-    var heading = [];
-    heading[0] = "";
-    heading[1] = "Downtown";
-    heading[2] = "Capitol Hill";
-    heading[3] = "South Lake Union";
-    heading[4] = "Wedgewood";
-    heading[5] = "Ballard";
-    heading[6] = "Fremont";
-
-    var donutsData = [];
-    donutsData[0] = new Array("Donuts per Hour", downtown.getDonutsPerHour(), capitolHill.getDonutsPerHour(), southLakeUnion.getDonutsPerHour(), southLakeUnion.getDonutsPerHour(), wedgewood.getDonutsPerHour(), ballard.getDonutsPerHour());
-    donutsData[1] = new Array("Donuts per Day", downtown.getDonutsPerDay(), capitolHill.getDonutsPerDay(), southLakeUnion.getDonutsPerDay(), wedgewood.getDonutsPerDay(), ballard.getDonutsPerDay(), fremont.getDonutsPerDay());
-
-
-    //TABLE COLUMNS
-    var tr = document.createElement('TR');
-    tableBody.appendChild(tr);
-    for (i = 0; i < heading.length; i++) {
-        var th = document.createElement('TH');
-        th.width = '75';
-        th.appendChild(document.createTextNode(heading[i]));
-        tr.appendChild(th);
-    }
-
-    //TABLE ROWS
-    for (i = 0; i < donutsData.length; i++) {
-        tr = document.createElement('TR');
-        for (j = 0; j < donutsData[i].length; j++) {
-            var td = document.createElement('TD');
-            td.appendChild(document.createTextNode(donutsData[i][j]));
-            tr.appendChild(td);
-        }
-        tableBody.appendChild(tr);
-    }
-    myTableDiv.appendChild(table);
-}
-
 // Shake effect
 jQuery.fn.shake = function(intShakes, intDistance, intDuration) {
     this.each(function() {
