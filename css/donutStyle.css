@@ -79,6 +79,10 @@ li {
   display: block;
 }
 
+.shops {
+  background-color: orange;
+}
+
 article {
 
   padding-top: 15px;
