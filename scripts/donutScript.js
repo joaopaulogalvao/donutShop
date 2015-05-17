@@ -120,12 +120,14 @@ $("#simpson_button").click(function() {
 //List interactivity
 $(function() {
   var ids = '';
-  var $listItems = $('#one,#two,#three,#four,#five,#six');
+  var $listItems = $('.shops');
 
   $listItems.on('mouseover click', function() {
     ids = this.id;
     $listItems.children('span').remove();
-    $(this).append(' <span class="priority">' + downtown.getDonutsPerHour('#one') + '</span>');
+    $('#one').append(' <span class="priority">' + downtown.getDonutsPerHour() + '</span>');
+    $('#two').append(' <span class="priority">' + capitolHill.getDonutsPerHour() + '</span>');
+    $('#three').append(' <span class="priority">' + southLakeUnion.getDonutsPerHour() + '</span>');
   });
 
   $listItems.on('mouseout', function() {
