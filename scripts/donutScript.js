@@ -131,17 +131,7 @@ for (var i = 0; i < donutShopList.length; i++) {
 
 }
 
-$listItems.children('span').hide();
 
-$listItems.on('mouseover click', function() {
-
-    $(this).children('span').show();
-
-});
-
-$listItems.on('mouseout', function() {
-    $(this).children('span').hide();
-});
 
 
 
