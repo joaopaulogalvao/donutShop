@@ -118,16 +118,22 @@ $("#simpson_button").click(function() {
 });
 
 //List interactivity
+//Array of Shops to display data
 var donutShopList = [downtown, capitolHill, southLakeUnion, wedgewood, ballard, fremont];
 
- var $listItems = $('.shops');
+//jQuery variable which will select all elements in the class shops
+var $listItems = $('.shops');
 
+//Loop which checks the array for each shop's and matches with the related number
 for (var i = 0; i < donutShopList.length; i++) {
 
-    var shopId = '#shop' + (i + 1);
 //i + 1 for accounting for array zero indexing
-    $(shopId).append('Donuts Per Customer: ' + ' ' + donutShopList[i].avgDonutsCustomer + ' / ');
-    $(shopId).append('Donuts Per Hour: ' + ' ' + donutShopList[i].getDonutsPerHour() + ' ');
+    var shopId = '#shop' + (i + 1);
+
+
+//Shows 0 as a number for each shop, this number will be changed after user input
+    $(shopId).append('Donuts Per Customer: ' + ' ' + donutShopList[i].avgDonutsCustomer * 0 + ' / ');
+    $(shopId).append('Donuts Per Hour: ' + ' ' + donutShopList[i].getDonutsPerHour() * 0 + ' ');
 
 }
 
