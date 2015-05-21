@@ -1,3 +1,7 @@
+var maxCustomersHour;
+var minCustomersHour;
+var avgDonutsCustomer;
+
 //Function that calculates the number of estimate customers per hour
 var estCustomers = function(minCustomersHour, maxCustomersHour) {
     return Math.floor(Math.random() * (maxCustomersHour - minCustomersHour + 1)) + minCustomersHour; //reinforces the minimum - push it to start at the minimum
@@ -17,7 +21,6 @@ function DonutMaster() {
             console.log("There is a new shop in " + this.shopList[i].name + " and it is making " + this.shopList[i].getDonutsPerDay() + " donuts per day and " + this.shopList[i].getDonutsPerHour() + " per hour.");
         }
     };
-
 }
 
 //Constructor function for all Donut Shops
@@ -35,63 +38,80 @@ function DonutShop(name, estCustomers, avgDonutsCustomer) {
     };
 }
 
+
+//By clicking a send button, store all values
+//Array of Shops to display data
+var donutShopList = [downtown, capitolHill, southLakeUnion, wedgewood, ballard, fremont];
+
+//jQuery variable which will select all elements in the class shops
+var $listButtons = $('.buttons');
+
+$listButtons.on("click", function(e) {
+    e.preventDefault();
+    // get input button
+
+    for (var i = 0; i < donutShopList.length; i++) {
+        //i + 1 for accounting for array zero indexing
+        var buttonId = '#sendButton' + (i + 1);
+        var minCustId = '#minCust' + (i + 1);
+        var maxCustId = '#maxCust' + (i + 1);
+        var avgDonutsCustId = '#avgDonutsCust' + (i + 1);
+        minCustomersHour = ($(minCustId).val());
+        maxCustomersHour = ($(maxCustId).val());
+        avgDonutsCustomer = ($(avgDonutsCustId).val());
+
+        console.log(minCustomersHour);
+        console.log(maxCustomersHour);
+        console.log(avgDonutsCustomer);
+
+    }
+
+});
+
+//Create all shop Objects
 //Downtown Shop Object
-var downtown = new DonutShop('Downtown', estCustomers(8, 43), 4.50);
-// Select the element and store it in a variable.
-
-//Object Output Test
-// console.log(downtown);
-//console.log(downtown.getDonutsPerDay());
-//console.log(downtown.getDonutsPerHour());
-
-//Number of donuts this shop needs to bake per day
-console.log('The ' + downtown.name + ' shop will make ' + downtown.getDonutsPerDay() + ' donuts today.');
-
-//Number of donuts this shop needs to bake per hour
-console.log('The ' + downtown.name + ' shop will make ' + downtown.getDonutsPerHour() + ' donuts per hour today.\n');
+var downtown = new DonutShop('Downtown', estCustomers(minCustomersHour, maxCustomersHour), avgDonutsCustomer);
 
 //Capitol Hill Shop Object
-var capitolHill = new DonutShop('Capitol Hill', estCustomers(4, 37), 2);
-
-//Number of donuts this shop needs to bake per day
-console.log('The ' + capitolHill.name + ' shop will make ' + capitolHill.getDonutsPerDay() + ' donuts today.');
-
-//Number of donuts this shop needs to bake per hour
-console.log('The ' + capitolHill.name + ' shop will make ' + capitolHill.getDonutsPerHour() + ' donuts per hour today.\n');
+var capitolHill = new DonutShop('Capitol Hill', estCustomers(minCustomersHour, maxCustomersHour), avgDonutsCustomer);
 
 //South Lake Union Shop Object
-var southLakeUnion = new DonutShop('South Lake Union', estCustomers(9, 23), 6.33);
-
-//Number of donuts this shop needs to bake per day
-console.log('The ' + southLakeUnion.name + ' shop will make ' + southLakeUnion.getDonutsPerDay() + ' donuts today.');
-
-//Number of donuts this shop needs to bake per hour
-console.log('The ' + southLakeUnion.name + ' shop will make ' + southLakeUnion.getDonutsPerHour() + ' donuts per hour today.\n');
+var southLakeUnion = new DonutShop('South Lake Union', estCustomers(minCustomersHour, maxCustomersHour), avgDonutsCustomer);
 
 //Wedgewood Shop Object
-var wedgewood = new DonutShop('Wedgewood', estCustomers(2, 28), 1.25);
-
-//Number of donuts this shop needs to bake per day
-console.log('The ' + wedgewood.name + ' shop will make ' + wedgewood.getDonutsPerDay() + ' donuts today.');
-
-//Number of donuts this shop needs to bake per hour
-console.log('The ' + wedgewood.name + ' shop will make ' + wedgewood.getDonutsPerHour() + ' donuts per hour today.\n');
+var wedgewood = new DonutShop('Wedgewood', estCustomers(minCustomersHour, maxCustomersHour), avgDonutsCustomer);
 
 //Ballard Shop Object
-var ballard = new DonutShop('Ballard', estCustomers(8, 58), 3.75);
-
-//Number of donuts this shop needs to bake per day
-console.log('The ' + ballard.name + ' shop will make ' + ballard.getDonutsPerDay() + ' donuts today.');
-
-//Number of donuts this shop needs to bake per hour
-console.log('The ' + ballard.name + ' shop will make ' + ballard.getDonutsPerHour() + ' donuts per hour today.\n');
+var ballard = new DonutShop('Ballard', estCustomers(minCustomersHour, maxCustomersHour), avgDonutsCustomer);
 
 //New Shop and the report
-var fremont = new DonutShop('Fremont', estCustomers(5, 40), 6.5);
+var fremont = new DonutShop('Fremont', estCustomers(minCustomersHour, maxCustomersHour), avgDonutsCustomer);
 var master = new DonutMaster();
 master.addShop(fremont);
 console.log(master.shopList);
 master.generateReport();
+
+//List interactivity
+
+//jQuery variable which will select all elements in the class shops
+var $listItems = $('.shops');
+
+//Show data by clicking on an element
+$listItems.on('click', function(e) {
+    //Loop which checks the array for each shop's and matches with the related number
+    for (var i = 0; i < donutShopList.length; i++) {
+
+        //i + 1 for accounting for array zero indexing
+        var shopId = '#shop' + (i + 1);
+
+
+        //Shows 0 as a number for each shop, this number will be changed after user input
+        $(shopId).append('<span> Donuts Per Hour:' + ' ' + donutShopList[i].getDonutsPerHour() + '</span>');
+        $(shopId).append('<span> Donuts Per Day: ' + ' ' + donutShopList[i].getDonutsPerDay() + '<span>');
+    }
+
+});
+
 
 // Shake effect
 jQuery.fn.shake = function(intShakes, intDistance, intDuration) {
@@ -116,28 +136,3 @@ jQuery.fn.shake = function(intShakes, intDistance, intDuration) {
 $("#simpson_button").click(function() {
     $("#caption,#left_photos,#center_photos,#right_photos").shake(3, 7, 800);
 });
-
-//List interactivity
-//Array of Shops to display data
-var donutShopList = [downtown, capitolHill, southLakeUnion, wedgewood, ballard, fremont];
-
-//jQuery variable which will select all elements in the class shops
-var $listItems = $('.shops');
-
-//Loop which checks the array for each shop's and matches with the related number
-for (var i = 0; i < donutShopList.length; i++) {
-
-//i + 1 for accounting for array zero indexing
-    var shopId = '#shop' + (i + 1);
-
-
-//Shows 0 as a number for each shop, this number will be changed after user input
-    $(shopId).append('Donuts Per Customer: ' + ' ' + donutShopList[i].avgDonutsCustomer * 0 + ' / ');
-    $(shopId).append('Donuts Per Hour: ' + ' ' + donutShopList[i].getDonutsPerHour() * 0 + ' ');
-
-}
-
-
-
-
-
