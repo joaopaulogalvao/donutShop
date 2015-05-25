@@ -163,3 +163,7 @@ body {
   background-size: 97%;
       }
 
+table {
+  border: 10px dashed antiquewhite;
+}
+
